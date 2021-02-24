@@ -17,6 +17,12 @@ else
 	MINER_NAME="sam"
 fi
 
+if [[ -z "${XMRPATH}" ]];then
+	echo "The 'XMPATH' setting is empty"
+	echo "Please change it to the location of your 'xmrig' executable binary"
+	exit 1
+fi
+
 if [[ "${CUDA}" = "on" ]];then
 	sudo "${XMRPATH}"/xmrig --cuda --donate-level "${DONATE}" -o "{$MINING_POOL}" -u "${RECADDRESS}" -k --tls --rig-id "${MINER_NAME}"
 

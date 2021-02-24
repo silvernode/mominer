@@ -14,7 +14,7 @@ else
 	CUDA="off"
 	OPENCL="off"
 
-	MINER_NAME="sam"
+	MINER_NAME="mominer"
 fi
 
 if [[ -z "${XMRPATH}" ]];then

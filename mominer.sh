@@ -8,7 +8,7 @@ else
 
 	MINING_POOL="us-west.minexmr.com:443"
 	XMRPATH=""
-	RECADDRESS=""
+	RECADDRESS="8AnnAFboz6aJxrzdPN4zbvWunXmPLNZ8Q89xRUDw8GZLL6DexzwJE7Hg2rPwnCegRaiLa3CRh3wkSCN7JkvRFBRx1iZiSHd"
 	DONATE=0
 	CPU_THREADS="$(nproc)"
 	CUDA="off"

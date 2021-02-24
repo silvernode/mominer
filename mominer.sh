@@ -1,12 +1,19 @@
 #!/bin/bash
-XMRPATH=""
-RECADDRESS=""
-DONATE=0
-CPU_THREADS="$(nproc)"
-CUDA="off"
-OPENCL="off"
+CONFIG_FILE="/home/${USER}/.config/mominer/mominer.conf"
 
-MINER_NAME="sam"
+if [[ -f "${CONFIG_FILE}" ]];then
+	source "${CONFIG_FILE}"
+else
+	echo "Setting default values, mining for author of mominer"
+	XMRPATH=""
+	RECADDRESS=""
+	DONATE=0
+	CPU_THREADS="$(nproc)"
+	CUDA="off"
+	OPENCL="off"
+
+	MINER_NAME="sam"
+fi
 
 if [[ "${CUDA}" = "on" ]];then
 	sudo "${XMRPATH}"/xmrig --cuda --donate-level "${DONATE}" -o us-west.minexmr.com:443 -u "${RECADDRESS}" -k --tls --rig-id "${MINER_NAME}"
